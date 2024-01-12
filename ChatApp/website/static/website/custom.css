@@ -1,0 +1,47 @@
+.navbar-custom {
+    background-color: #1A1A1D;
+}
+
+.navbar-custom .nav-link {
+    color: #C3073F;
+}
+
+.navbar-custom .navbar-brand {
+    color: #C3073F;
+}
+
+.btn-primary {
+    background-color: #C3073F;
+    border-color: #C3073F;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #a3063a; /* Slightly darker for hover effect, adjust as needed */
+    border-color: #a3063a;
+}
+
+.float-right {
+    float: right;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.centered-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto; /* Adjust as needed */
+    max-width: 100%; /* Adjust as needed */
+}
+
+.custom-background {
+    background-image: url('ChatApp/website/static/images/background_login_register.png'); /* Adjust the path as needed */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
