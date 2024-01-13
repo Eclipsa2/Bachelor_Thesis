@@ -45,3 +45,38 @@ body, html {
     background-repeat: no-repeat;
 }
 
+.message-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.chat-bubble {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 5px 10px;
+    position: relative;
+}
+
+.text-end .chat-bubble {
+    background-color: #DCF8C6; /* Light green background for user messages */
+    margin-left: auto;
+}
+
+.text-start .chat-bubble {
+    background-color: #ECECEC;
+    margin-right: auto;
+}
+
+.message-timestamp {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.font-weight-normal {
+    font-weight: normal;
+}
+
