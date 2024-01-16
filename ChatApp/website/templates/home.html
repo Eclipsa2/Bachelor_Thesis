@@ -14,25 +14,36 @@
 <div class="container-fluid h-100 px-0">
     <div class="row h-100 mx-0">
         <!-- Chat List Column -->
-        <div class="col-md-4 border-end px-2" style="overflow-y: auto;">
-            <!-- New Chat Button -->
-            <button class="btn btn-primary w-100 mt-2 mb-3">New Chat</button>
+        <div class="col-md-4 border-end px-2">
+            <!-- Start New Chat Button - Outside the scrollable area -->
+            {% include 'start_new_chat.html' %}
 
-            <div class="list-group">
+            <!-- Scrollable Chat List -->
+            <div class="list-group" style="overflow-y: auto; max-height: 80vh;">
                 {% if chat_sessions %}
                 {% for chat_session in chat_sessions %}
                 <!-- Example Chat List Item -->
-                <a href="{% url 'chat_session_detail' chat_session.id %}" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{ chat_session.user.username }}</h5>
+                <a href="{% url 'chat_session_detail' chat_session.id %}"
+                   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div>
+                        {% if chat_session.last_message %}
+                        <p class="mb-1 conversation-list-message-content">{{ chat_session.last_message.message }}</p>
+                        <small>{{ chat_session.last_message.timestamp|timesince }} ago</small>
+                        {% else %}
+                        <p class="mb-1 message-content">Start a conversation</p>
+                        <small>No messages</small>
+                        {% endif %}
                     </div>
-                    {% if chat_session.last_message %}
-                    <p class="mb-1 message-content">{{ chat_session.last_message.message }}</p>
-                    <small>{{ chat_session.last_message.timestamp|timesince }} ago</small>
-                    {% else %}
-                    <p class="mb-1 message-content">Start a conversation</p>
-                    <small>No messages</small>
-                    {% endif %}
+
+                    <!-- Delete Button -->
+                    <form action="{% url 'delete_chat' chat_session.id %}" method="post"
+                          class="ml-2">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                            <!-- Font Awesome icon, or use your own icon -->
+                        </button>
+                    </form>
                 </a>
                 {% endfor %}
                 {% endif %}
@@ -44,25 +55,27 @@
         <!-- Selected Chat Column -->
         <div class="col-md-8" style="position: relative; padding-left: 0; padding-right: 0;">
             <!-- Chat Area -->
-            <div class="chat-history" style="overflow-y: auto; height: calc(100vh - 110px); padding: 20px;">
+            <div class="chat-history"
+                 style="overflow-y: auto; height: calc(100vh - 110px); padding: 20px;">
                 {% if selected_messages %}
-                    <!-- Display chat messages -->
-                    {% for message in selected_messages %}
-                    <div class="d-flex align-items-start mb-4">
-                        <div class="flex-grow-1 ms-3">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">{{ message.sender_username }}</h5>
-                                <small>{{ message.timestamp }}</small>
-                            </div>
-                            <p>{{ message.message }}</p>
+                <!-- Display chat messages -->
+                {% for message in selected_messages %}
+                <div class="d-flex align-items-start mb-4">
+                    <div class="flex-grow-1 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ message.sender_username }}</h5>
+                            <small>{{ message.timestamp }}</small>
                         </div>
+                        <p>{{ message.message }}</p>
                     </div>
-                    {% endfor %}
+                </div>
+                {% endfor %}
                 {% else %}
-                    <!-- Display the message in the center if no chat is selected -->
-                    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-                        <h3 class="text-center font-weight-normal">Please select a chat or start a new one.</h3>
-                    </div>
+                <!-- Display the message in the center if no chat is selected -->
+                <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <h3 class="text-center font-weight-normal">Please select a chat or start a new
+                        one.</h3>
+                </div>
                 {% endif %}
             </div>
         </div>

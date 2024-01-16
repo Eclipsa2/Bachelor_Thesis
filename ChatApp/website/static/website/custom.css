@@ -46,10 +46,10 @@ body, html {
 }
 
 .message-content {
-    white-space: nowrap;
+    flex-grow: 1;
     overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+    max-width: 100%; /* Ensure the message doesn't exceed the container width */
+    word-break: break-word; /* Breaks long words if necessary */
 }
 
 .chat-bubble {
@@ -58,6 +58,8 @@ body, html {
     border-radius: 20px;
     margin: 5px 10px;
     position: relative;
+    word-wrap: break-word; /* Add this line */
+    max-width: 80%; /* Example max-width, adjust as needed */
 }
 
 .text-end .chat-bubble {
@@ -78,5 +80,52 @@ body, html {
 
 .font-weight-normal {
     font-weight: normal;
+}
+
+.chat-history {
+    padding-bottom: 40px; /* Adjust this value based on the height of your input area */
+    overflow-y: auto; /* This ensures a scrollbar appears if content overflows */
+}
+
+/* Optional: Adjust the scroll behavior for dynamic content loading */
+.chat-history::after {
+    content: "";
+    display: block;
+    height: 45px; /* Same as the padding-bottom value */
+}
+
+/* Main container holding chat list and chat window */
+.main-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling of the entire page */
+}
+
+/* Chat list container */
+.chat-list-container {
+    overflow-y: auto; /* Allow scrolling within the chat list */
+    flex: 0 0 30%; /* Adjust the width as necessary */
+}
+
+/* Chat window container */
+.chat-window-container {
+    overflow-y: auto; /* Allow scrolling within the chat window */
+    flex-grow: 1; /* Take up the remaining space */
+}
+
+/* Alert container */
+.alert-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.conversation-list-message-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1; /* Allow the text to fill the space */
+    max-width: 370px; /* Adjust this percentage as needed */
 }
 
