@@ -4,29 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ffcf62f-09f5-480e-9029-a79698990629" name="Changes" comment="Now you can send messages, see chat history and proper UI for a chat app">
-      <change afterPath="$PROJECT_DIR$/ChatApp/modele/modelClasificare/config.json" afterDir="false" />
+    <list default="true" id="9ffcf62f-09f5-480e-9029-a79698990629" name="Changes" comment="Now the initial message is classified so that the bot knows what type of request the user needs. The NER is working">
       <change afterPath="$PROJECT_DIR$/ChatApp/modele/modelClasificare/pytorch_model.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ChatApp/modele/modelClasificare/special_tokens_map.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ChatApp/modele/modelClasificare/tokenizer_config.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ChatApp/modele/modelClasificare/training_args.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ChatApp/modele/modelClasificare/vocab.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatApp/website/auxiliary_scripts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatApp/website/migrations/0002_chatsession_last_updated.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatApp/website/migrations/0003_chatsession_is_active_chatsession_request_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatApp/website/migrations/0004_alter_chatsession_request_type.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatApp/website/migrations/0005_requiredentities_chatentities.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ChatApp/website/templates/start_new_chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ChatApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ChatApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/static/website/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/static/website/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/templates/chat_session_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/templates/chat_session_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatApp/website/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChatApp/website/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -55,26 +40,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.main.executor": "Run",
-    "Python.mydb.executor": "Run",
-    "Python.views.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/Andrei/Desktop/Licenta/ChatApp/ChatApp/modele",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mydb.executor&quot;: &quot;Run&quot;,
+    &quot;Python.views.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Andrei/Desktop/Licenta/ChatApp/ChatApp/modele&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ChatApp/modele" />
@@ -194,16 +179,36 @@
       <option name="project" value="LOCAL" />
       <updated>1705145959503</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Now the initial message is classified so that the bot knows what type of request the user needs. The NER is working">
+      <option name="closed" value="true" />
+      <created>1705430364532</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705430364532</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Now you can send messages, see chat history and proper UI for a chat app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now you can send messages, see chat history and proper UI for a chat app" />
+    <MESSAGE value="Now the initial message is classified so that the bot knows what type of request the user needs. The NER is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now the initial message is classified so that the bot knows what type of request the user needs. The NER is working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ChatApp$mydb.coverage" NAME="mydb Coverage Results" MODIFIED="1704972644666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ChatApp" />
